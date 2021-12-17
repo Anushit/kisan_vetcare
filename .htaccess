@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /kisan_vetcare/ 
+
+RewriteRule    ^about_us$     			pages.php?id=1    [NC,L]
+RewriteRule    ^marketing$    			pages.php?id=2    [NC,L]
+RewriteRule    ^product_processing$     pages.php?id=3    [NC,L]
+RewriteRule    ^research_development$   pages.php?id=4    [NC,L]
+RewriteRule    ^contact_us$     		contact_us.php  [NC,L]
+
+
+RewriteRule    ^category/([0-9]+)$   category.php?id=$1 [QSA,L]
+
+RewriteRule    ^product/([0-9]+)$   product.php?id=$1 [QSA,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
